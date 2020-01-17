@@ -61,6 +61,7 @@ public class TaskBootStrap implements ApplicationListener<ContextRefreshedEvent>
 		Task task = new Task();
 		task.setName("Create Spring App");
 		task.setDueDate((today.plusDays(5)));
+		task.setCompleted(true);
 		tasks.add(task);
 		
 		task = new Task();

@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.madhu.spring.tasks.POJO.Greet;
 import com.madhu.spring.tasks.domain.Task;
@@ -18,6 +20,7 @@ import com.madhu.spring.tasks.service.TaskService;
  *
  */
 @RestController
+@RequestMapping(value="/Tasks")
 public class Controller {
 
 	TaskService taskService;
@@ -39,6 +42,11 @@ public class Controller {
 	public ResponseEntity<Object> getAllTasks() {
 		Iterable<Task> tasks = taskService.findAllTasks();
 		return ResponseEntity.status(HttpStatus.OK).body(tasks);
+	}
+
+	@PostMapping("/save")
+	public Task save(@RequestBody Task task){
+		return this.taskService.save(task);
 	}
 
 	@Autowired

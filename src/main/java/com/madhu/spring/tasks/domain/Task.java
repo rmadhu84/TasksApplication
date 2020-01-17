@@ -10,12 +10,9 @@ import javax.persistence.Id;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
+@Data
 public class Task{
     
 	@Id
@@ -26,5 +23,9 @@ public class Task{
 	
 	@JsonFormat(pattern = "MM/dd/yyyy")
 	private LocalDate dueDate;
-	private LocalDate completedDate;
+	private Boolean completed;
+
+	public Task(){
+		this.completed = false;
+	}
 }
