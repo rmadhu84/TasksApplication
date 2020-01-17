@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TasksComponent implements OnInit {
 
-  constructor() { }
+  private _title: string = "My Tasks List";
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
+
+  get title() {
+    return this._title;
+  }
+
 
 }

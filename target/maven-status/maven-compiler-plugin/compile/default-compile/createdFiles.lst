@@ -1,8 +1,0 @@
-com/madhu/spring/tasks/service/TaskServiceImpl.class
-com/madhu/spring/tasks/TasksApplication.class
-com/madhu/spring/tasks/service/TaskService.class
-com/madhu/spring/tasks/POJO/Greet.class
-com/madhu/spring/tasks/repository/TaskRepository.class
-com/madhu/spring/tasks/domain/Task.class
-com/madhu/spring/tasks/controllers/Controller.class
-com/madhu/spring/tasks/dataload/TaskBootStrap.class
