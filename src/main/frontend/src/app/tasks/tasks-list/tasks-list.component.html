@@ -1,8 +1,8 @@
 <ul class="list-group">
     <li *ngFor="let task of tasks " class="list-group-item ">
         <div class="custom-control custom-checkbox mb-3">
-            <input type="checkbox" (change)="onTaskChange($event,task)" class="custom-control-input" id="{{task.id}}" name="task{{ task.id }}" [checked]="task.completed ">
-            <label class="custom-control-label" for="{{task.id}}"><span ngClass="{{task.completed ? 'name completed' : 'name'}} ">{{ task.name }}</span></label>
+            <input type="checkbox" (change)="onTaskChange($event,task)" class="custom-control-input" id="task{{task.id}}" name="task{{ task.id }}" [checked]="task.completed ">
+            <label class="custom-control-label" for="task{{task.id}}"><span ngClass="{{task.completed ? 'name completed' : 'name'}} ">{{ task.name }}</span></label>
             <span class="label {{ getDueDateLabel(task) }} float-right "> {{ task.dueDate }}</span>
         </div>
     </li>
