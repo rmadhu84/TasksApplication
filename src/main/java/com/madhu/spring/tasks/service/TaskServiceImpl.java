@@ -29,6 +29,15 @@ public class TaskServiceImpl implements TaskService{
 		return this.taskRepo.save(task);
 	}
 
+	public void deleteById(Long id){
+		taskRepo.deleteById(id);
+	}
+
+	@Override
+	public Task findTaskById(Long id) {
+		return taskRepo.findById(id).get();
+	}
+
     
     
 }
