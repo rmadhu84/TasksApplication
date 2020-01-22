@@ -53,6 +53,17 @@ export class TasksListComponent implements OnInit {
 	getDueDateLabel(task: Task) {
 		return task.completed ? "badge-pill badge-success" : "badge-pill badge-primary"
 	}
+	delete(task: Task) {
+		this.service.deleteTask(task).subscribe((response)=>{
+			this.reload();
+		});
+		
+	}
+
+	reload(){
+		this.subscription = this.service.getAllTasks().subscribe((response)=>this.tasks=response);
+	}
+
 
 	onTaskChange(event, task) {
 		console.log("Task saved");

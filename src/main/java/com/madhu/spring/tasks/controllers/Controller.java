@@ -76,8 +76,8 @@ public class Controller {
 	}
 	
 	@RequestMapping("/deleteTask")
-	public void delete(@ModelAttribute Task task){
-		log.info(task.toString());
+	public void deleteTask(@RequestBody Task task){
+		this.taskService.deleteTask(task);
 	}
 
 	

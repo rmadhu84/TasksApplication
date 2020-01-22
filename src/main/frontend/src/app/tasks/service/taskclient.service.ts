@@ -24,6 +24,10 @@ export class TaskclientService {
 	addTask(task: Task){
 		return this.saveTask(task, false);
 	}
+
+	deleteTask(task:Task){
+		return this.TaskClient.post('/api/tasks/deleteTask',task);
+	}
 	
 /*	getEmployeesList(): Observable<any> {
     return this.TaskClient.get(`${this.baseUrl}`);

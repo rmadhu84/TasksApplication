@@ -15,7 +15,7 @@ public class TaskServiceImpl implements TaskService{
 	
 	@Override
 	public Iterable<Task> findAllTasks() {
-		return taskRepo.findAll();
+		return this.taskRepo.findAll();
 	}
 	
 	@Autowired
@@ -30,14 +30,15 @@ public class TaskServiceImpl implements TaskService{
 	}
 
 	public void deleteById(Long id){
-		taskRepo.deleteById(id);
+		this.taskRepo.deleteById(id);
 	}
 
 	@Override
 	public Task findTaskById(Long id) {
-		return taskRepo.findById(id).get();
+		return this.taskRepo.findById(id).get();
 	}
 
-    
-    
+	public void deleteTask(Task task){
+		this.taskRepo.delete(task);
+	}
 }
